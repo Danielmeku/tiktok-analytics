@@ -37,8 +37,21 @@ export async function POST(req: Request) {
         engagement_rate: engagement,
       },
     ]).select().single();
-    if (error) throw error;
-    return NextResponse.json({ success: true, data });
+    if (error) {
+      console.log('Supabase insert error:', JSON.stringify(error));
+      throw error;
+    }
+
+    return NextResponse.json({
+      success: true,
+      account: {
+        username: data.username,
+        follower_count: data.followers_count,
+        heart_count: data.total_likes,
+        video_count: data.video_count,
+        updated_at: data.created_at,
+      },
+    });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
