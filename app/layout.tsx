@@ -2,8 +2,8 @@ import React from 'react';
 import './globals.css';
 
 export const metadata = {
-  title: 'TikTok Analytics & AI Coach',
-  description: 'Track and analyze TikTok performance',
+  title: 'TikTok Analytics',
+  description: 'TikTok Analytics & AI Coach Platform',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-950 text-slate-100 antialiased min-h-screen">
+      <body className="bg-slate-950 text-slate-100 min-h-screen">
         {children}
       </body>
     </html>
