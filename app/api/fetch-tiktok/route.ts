@@ -23,6 +23,7 @@ export async function POST(req: Request) {
     });
 
     const apiData = await response.json();
+    console.log('RapidAPI response:', JSON.stringify(apiData));
     const stats = apiData?.userInfo?.stats;
 
     if (!stats) {
